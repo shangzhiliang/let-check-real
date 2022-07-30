@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pdms.base.mapper.DistArrangeOccupyLineTaskMapper">
+  <resultMap id="BaseResultMap" type="com.pdms.base.model.DistArrangeOccupyLineTask">
+    <!--@mbg.generated-->
+    <!--@Table dist_arrange_occupy_line_task-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="city_id" jdbcType="BIGINT" property="cityId" />
+    <result column="warehouse_id" jdbcType="BIGINT" property="warehouseId" />
+    <result column="fdc_id" jdbcType="BIGINT" property="fdcId" />
+    <result column="station_region_id" jdbcType="BIGINT" property="stationRegionId" />
+    <result column="batch_id" jdbcType="BIGINT" property="batchId" />
+    <result column="product_seq" jdbcType="INTEGER" property="productSeq" />
+    <result column="delivery_date" jdbcType="INTEGER" property="deliveryDate" />
+    <result column="task_status" jdbcType="TINYINT" property="taskStatus" />
+    <result column="task_type" jdbcType="TINYINT" property="taskType" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="is_deleted" jdbcType="BOOLEAN" property="isDeleted" />
+    <result column="c_t" jdbcType="BIGINT" property="ct" />
+    <result column="u_t" jdbcType="BIGINT" property="ut" />
+    <result column="create_user" jdbcType="BIGINT" property="createUser" />
+    <result column="update_user" jdbcType="BIGINT" property="updateUser" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, city_id, warehouse_id, fdc_id, station_region_id, batch_id, product_seq, delivery_date, 
+    task_status, task_type, remark, is_deleted, c_t, u_t, create_user, update_user
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from dist_arrange_occupy_line_task
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from dist_arrange_occupy_line_task
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.pdms.base.model.DistArrangeOccupyLineTask" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into dist_arrange_occupy_line_task (city_id, warehouse_id, fdc_id, 
+      station_region_id, batch_id, product_seq, 
+      delivery_date, task_status, task_type, 
+      remark, is_deleted, c_t, 
+      u_t, create_user, update_user
+      )
+    values (#{cityId,jdbcType=BIGINT}, #{warehouseId,jdbcType=BIGINT}, #{fdcId,jdbcType=BIGINT}, 
+      #{stationRegionId,jdbcType=BIGINT}, #{batchId,jdbcType=BIGINT}, #{productSeq,jdbcType=INTEGER}, 
+      #{deliveryDate,jdbcType=INTEGER}, #{taskStatus,jdbcType=TINYINT}, #{taskType,jdbcType=TINYINT}, 
+      #{remark,jdbcType=VARCHAR}, #{isDeleted,jdbcType=BOOLEAN}, #{ct,jdbcType=BIGINT}, 
+      #{ut,jdbcType=BIGINT}, #{createUser,jdbcType=BIGINT}, #{updateUser,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.pdms.base.model.DistArrangeOccupyLineTask" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into dist_arrange_occupy_line_task
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="cityId != null">
+        city_id,
+      </if>
+      <if test="warehouseId != null">
+        warehouse_id,
+      </if>
+      <if test="fdcId != null">
+        fdc_id,
+      </if>
+      <if test="stationRegionId != null">
+        station_region_id,
+      </if>
+      <if test="batchId != null">
+        batch_id,
+      </if>
+      <if test="productSeq != null">
+        product_seq,
+      </if>
+      <if test="deliveryDate != null">
+        delivery_date,
+      </if>
+      <if test="taskStatus != null">
+        task_status,
+      </if>
+      <if test="taskType != null">
+        task_type,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="isDeleted != null">
+        is_deleted,
+      </if>
+      <if test="ct != null">
+        c_t,
+      </if>
+      <if test="ut != null">
+        u_t,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="cityId != null">
+        #{cityId,jdbcType=BIGINT},
+      </if>
+      <if test="warehouseId != null">
+        #{warehouseId,jdbcType=BIGINT},
+      </if>
+      <if test="fdcId != null">
+        #{fdcId,jdbcType=BIGINT},
+      </if>
+      <if test="stationRegionId != null">
+        #{stationRegionId,jdbcType=BIGINT},
+      </if>
+      <if test="batchId != null">
+        #{batchId,jdbcType=BIGINT},
+      </if>
+      <if test="productSeq != null">
+        #{productSeq,jdbcType=INTEGER},
+      </if>
+      <if test="deliveryDate != null">
+        #{deliveryDate,jdbcType=INTEGER},
+      </if>
+      <if test="taskStatus != null">
+        #{taskStatus,jdbcType=TINYINT},
+      </if>
+      <if test="taskType != null">
+        #{taskType,jdbcType=TINYINT},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="isDeleted != null">
+        #{isDeleted,jdbcType=BOOLEAN},
+      </if>
+      <if test="ct != null">
+        #{ct,jdbcType=BIGINT},
+      </if>
+      <if test="ut != null">
+        #{ut,jdbcType=BIGINT},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=BIGINT},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pdms.base.model.DistArrangeOccupyLineTask">
+    <!--@mbg.generated-->
+    update dist_arrange_occupy_line_task
+    <set>
+      <if test="cityId != null">
+        city_id = #{cityId,jdbcType=BIGINT},
+      </if>
+      <if test="warehouseId != null">
+        warehouse_id = #{warehouseId,jdbcType=BIGINT},
+      </if>
+      <if test="fdcId != null">
+        fdc_id = #{fdcId,jdbcType=BIGINT},
+      </if>
+      <if test="stationRegionId != null">
+        station_region_id = #{stationRegionId,jdbcType=BIGINT},
+      </if>
+      <if test="batchId != null">
+        batch_id = #{batchId,jdbcType=BIGINT},
+      </if>
+      <if test="productSeq != null">
+        product_seq = #{productSeq,jdbcType=INTEGER},
+      </if>
+      <if test="deliveryDate != null">
+        delivery_date = #{deliveryDate,jdbcType=INTEGER},
+      </if>
+      <if test="taskStatus != null">
+        task_status = #{taskStatus,jdbcType=TINYINT},
+      </if>
+      <if test="taskType != null">
+        task_type = #{taskType,jdbcType=TINYINT},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="isDeleted != null">
+        is_deleted = #{isDeleted,jdbcType=BOOLEAN},
+      </if>
+      <if test="ct != null">
+        c_t = #{ct,jdbcType=BIGINT},
+      </if>
+      <if test="ut != null">
+        u_t = #{ut,jdbcType=BIGINT},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=BIGINT},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pdms.base.model.DistArrangeOccupyLineTask">
+    <!--@mbg.generated-->
+    update dist_arrange_occupy_line_task
+    set city_id = #{cityId,jdbcType=BIGINT},
+      warehouse_id = #{warehouseId,jdbcType=BIGINT},
+      fdc_id = #{fdcId,jdbcType=BIGINT},
+      station_region_id = #{stationRegionId,jdbcType=BIGINT},
+      batch_id = #{batchId,jdbcType=BIGINT},
+      product_seq = #{productSeq,jdbcType=INTEGER},
+      delivery_date = #{deliveryDate,jdbcType=INTEGER},
+      task_status = #{taskStatus,jdbcType=TINYINT},
+      task_type = #{taskType,jdbcType=TINYINT},
+      remark = #{remark,jdbcType=VARCHAR},
+      is_deleted = #{isDeleted,jdbcType=BOOLEAN},
+      c_t = #{ct,jdbcType=BIGINT},
+      u_t = #{ut,jdbcType=BIGINT},
+      create_user = #{createUser,jdbcType=BIGINT},
+      update_user = #{updateUser,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

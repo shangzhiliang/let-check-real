@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.base.PdmsDriverSelfCollectSkuConfigMapper">
+  <resultMap id="BaseResultMap" type="com.domain.base.PdmsDriverSelfCollectSkuConfig">
+    <!--@mbg.generated-->
+    <!--@Table pdms_driver_self_collect_sku_config-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="warehouse_id" jdbcType="BIGINT" property="warehouseId" />
+    <result column="pick_area_id" jdbcType="BIGINT" property="pickAreaId" />
+    <result column="sku_id" jdbcType="BIGINT" property="skuId" />
+    <result column="ssu_id" jdbcType="BIGINT" property="ssuId" />
+    <result column="ssu_name" jdbcType="VARCHAR" property="ssuName" />
+    <result column="receive_amount" jdbcType="INTEGER" property="receiveAmount" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="config_status" jdbcType="TINYINT" property="configStatus" />
+    <result column="is_deleted" jdbcType="TINYINT" property="isDeleted" />
+    <result column="c_t" jdbcType="BIGINT" property="ct" />
+    <result column="u_t" jdbcType="BIGINT" property="ut" />
+    <result column="creater" jdbcType="BIGINT" property="creater" />
+    <result column="updater" jdbcType="BIGINT" property="updater" />
+    <result column="updater_name" jdbcType="VARCHAR" property="updaterName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, warehouse_id, pick_area_id, sku_id, ssu_id, ssu_name, receive_amount, remark, 
+    config_status, is_deleted, c_t, u_t, creater, updater, updater_name
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from pdms_driver_self_collect_sku_config
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from pdms_driver_self_collect_sku_config
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.domain.base.PdmsDriverSelfCollectSkuConfig" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into pdms_driver_self_collect_sku_config (warehouse_id, pick_area_id, sku_id, 
+      ssu_id, ssu_name, receive_amount, 
+      remark, config_status, is_deleted, 
+      c_t, u_t, creater, updater, 
+      updater_name)
+    values (#{warehouseId,jdbcType=BIGINT}, #{pickAreaId,jdbcType=BIGINT}, #{skuId,jdbcType=BIGINT}, 
+      #{ssuId,jdbcType=BIGINT}, #{ssuName,jdbcType=VARCHAR}, #{receiveAmount,jdbcType=INTEGER}, 
+      #{remark,jdbcType=VARCHAR}, #{configStatus,jdbcType=TINYINT}, #{isDeleted,jdbcType=TINYINT}, 
+      #{ct,jdbcType=BIGINT}, #{ut,jdbcType=BIGINT}, #{creater,jdbcType=BIGINT}, #{updater,jdbcType=BIGINT}, 
+      #{updaterName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.domain.base.PdmsDriverSelfCollectSkuConfig" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into pdms_driver_self_collect_sku_config
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="warehouseId != null">
+        warehouse_id,
+      </if>
+      <if test="pickAreaId != null">
+        pick_area_id,
+      </if>
+      <if test="skuId != null">
+        sku_id,
+      </if>
+      <if test="ssuId != null">
+        ssu_id,
+      </if>
+      <if test="ssuName != null">
+        ssu_name,
+      </if>
+      <if test="receiveAmount != null">
+        receive_amount,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="configStatus != null">
+        config_status,
+      </if>
+      <if test="isDeleted != null">
+        is_deleted,
+      </if>
+      <if test="ct != null">
+        c_t,
+      </if>
+      <if test="ut != null">
+        u_t,
+      </if>
+      <if test="creater != null">
+        creater,
+      </if>
+      <if test="updater != null">
+        updater,
+      </if>
+      <if test="updaterName != null">
+        updater_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="warehouseId != null">
+        #{warehouseId,jdbcType=BIGINT},
+      </if>
+      <if test="pickAreaId != null">
+        #{pickAreaId,jdbcType=BIGINT},
+      </if>
+      <if test="skuId != null">
+        #{skuId,jdbcType=BIGINT},
+      </if>
+      <if test="ssuId != null">
+        #{ssuId,jdbcType=BIGINT},
+      </if>
+      <if test="ssuName != null">
+        #{ssuName,jdbcType=VARCHAR},
+      </if>
+      <if test="receiveAmount != null">
+        #{receiveAmount,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="configStatus != null">
+        #{configStatus,jdbcType=TINYINT},
+      </if>
+      <if test="isDeleted != null">
+        #{isDeleted,jdbcType=TINYINT},
+      </if>
+      <if test="ct != null">
+        #{ct,jdbcType=BIGINT},
+      </if>
+      <if test="ut != null">
+        #{ut,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null">
+        #{creater,jdbcType=BIGINT},
+      </if>
+      <if test="updater != null">
+        #{updater,jdbcType=BIGINT},
+      </if>
+      <if test="updaterName != null">
+        #{updaterName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.domain.base.PdmsDriverSelfCollectSkuConfig">
+    <!--@mbg.generated-->
+    update pdms_driver_self_collect_sku_config
+    <set>
+      <if test="warehouseId != null">
+        warehouse_id = #{warehouseId,jdbcType=BIGINT},
+      </if>
+      <if test="pickAreaId != null">
+        pick_area_id = #{pickAreaId,jdbcType=BIGINT},
+      </if>
+      <if test="skuId != null">
+        sku_id = #{skuId,jdbcType=BIGINT},
+      </if>
+      <if test="ssuId != null">
+        ssu_id = #{ssuId,jdbcType=BIGINT},
+      </if>
+      <if test="ssuName != null">
+        ssu_name = #{ssuName,jdbcType=VARCHAR},
+      </if>
+      <if test="receiveAmount != null">
+        receive_amount = #{receiveAmount,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="configStatus != null">
+        config_status = #{configStatus,jdbcType=TINYINT},
+      </if>
+      <if test="isDeleted != null">
+        is_deleted = #{isDeleted,jdbcType=TINYINT},
+      </if>
+      <if test="ct != null">
+        c_t = #{ct,jdbcType=BIGINT},
+      </if>
+      <if test="ut != null">
+        u_t = #{ut,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null">
+        creater = #{creater,jdbcType=BIGINT},
+      </if>
+      <if test="updater != null">
+        updater = #{updater,jdbcType=BIGINT},
+      </if>
+      <if test="updaterName != null">
+        updater_name = #{updaterName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.domain.base.PdmsDriverSelfCollectSkuConfig">
+    <!--@mbg.generated-->
+    update pdms_driver_self_collect_sku_config
+    set warehouse_id = #{warehouseId,jdbcType=BIGINT},
+      pick_area_id = #{pickAreaId,jdbcType=BIGINT},
+      sku_id = #{skuId,jdbcType=BIGINT},
+      ssu_id = #{ssuId,jdbcType=BIGINT},
+      ssu_name = #{ssuName,jdbcType=VARCHAR},
+      receive_amount = #{receiveAmount,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      config_status = #{configStatus,jdbcType=TINYINT},
+      is_deleted = #{isDeleted,jdbcType=TINYINT},
+      c_t = #{ct,jdbcType=BIGINT},
+      u_t = #{ut,jdbcType=BIGINT},
+      creater = #{creater,jdbcType=BIGINT},
+      updater = #{updater,jdbcType=BIGINT},
+      updater_name = #{updaterName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update pdms_driver_self_collect_sku_config
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="warehouse_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.warehouseId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="pick_area_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.pickAreaId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="sku_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.skuId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="ssu_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.ssuId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="ssu_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.ssuName,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="receive_amount = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.receiveAmount,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="remark = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.remark,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="config_status = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.configStatus,jdbcType=TINYINT}
+        </foreach>
+      </trim>
+      <trim prefix="is_deleted = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.isDeleted,jdbcType=TINYINT}
+        </foreach>
+      </trim>
+      <trim prefix="c_t = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.ct,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="u_t = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.ut,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="creater = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.creater,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="updater = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.updater,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="updater_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.updaterName,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=BIGINT}
+    </foreach>
+  </update>
+  <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into pdms_driver_self_collect_sku_config
+    (warehouse_id, pick_area_id, sku_id, ssu_id, ssu_name, receive_amount, remark, config_status, 
+      is_deleted, c_t, u_t, creater, updater, updater_name)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.warehouseId,jdbcType=BIGINT}, #{item.pickAreaId,jdbcType=BIGINT}, #{item.skuId,jdbcType=BIGINT}, 
+        #{item.ssuId,jdbcType=BIGINT}, #{item.ssuName,jdbcType=VARCHAR}, #{item.receiveAmount,jdbcType=INTEGER}, 
+        #{item.remark,jdbcType=VARCHAR}, #{item.configStatus,jdbcType=TINYINT}, #{item.isDeleted,jdbcType=TINYINT}, 
+        #{item.ct,jdbcType=BIGINT}, #{item.ut,jdbcType=BIGINT}, #{item.creater,jdbcType=BIGINT}, 
+        #{item.updater,jdbcType=BIGINT}, #{item.updaterName,jdbcType=VARCHAR})
+    </foreach>
+  </insert>
+  <insert id="insertOrUpdate" keyColumn="id" keyProperty="id" parameterType="com.domain.base.PdmsDriverSelfCollectSkuConfig" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into pdms_driver_self_collect_sku_config
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      warehouse_id,
+      pick_area_id,
+      sku_id,
+      ssu_id,
+      ssu_name,
+      receive_amount,
+      remark,
+      config_status,
+      is_deleted,
+      c_t,
+      u_t,
+      creater,
+      updater,
+      updater_name,
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      #{warehouseId,jdbcType=BIGINT},
+      #{pickAreaId,jdbcType=BIGINT},
+      #{skuId,jdbcType=BIGINT},
+      #{ssuId,jdbcType=BIGINT},
+      #{ssuName,jdbcType=VARCHAR},
+      #{receiveAmount,jdbcType=INTEGER},
+      #{remark,jdbcType=VARCHAR},
+      #{configStatus,jdbcType=TINYINT},
+      #{isDeleted,jdbcType=TINYINT},
+      #{ct,jdbcType=BIGINT},
+      #{ut,jdbcType=BIGINT},
+      #{creater,jdbcType=BIGINT},
+      #{updater,jdbcType=BIGINT},
+      #{updaterName,jdbcType=VARCHAR},
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        id = #{id,jdbcType=BIGINT},
+      </if>
+      warehouse_id = #{warehouseId,jdbcType=BIGINT},
+      pick_area_id = #{pickAreaId,jdbcType=BIGINT},
+      sku_id = #{skuId,jdbcType=BIGINT},
+      ssu_id = #{ssuId,jdbcType=BIGINT},
+      ssu_name = #{ssuName,jdbcType=VARCHAR},
+      receive_amount = #{receiveAmount,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      config_status = #{configStatus,jdbcType=TINYINT},
+      is_deleted = #{isDeleted,jdbcType=TINYINT},
+      c_t = #{ct,jdbcType=BIGINT},
+      u_t = #{ut,jdbcType=BIGINT},
+      creater = #{creater,jdbcType=BIGINT},
+      updater = #{updater,jdbcType=BIGINT},
+      updater_name = #{updaterName,jdbcType=VARCHAR},
+    </trim>
+  </insert>
+  <insert id="insertOrUpdateSelective" keyColumn="id" keyProperty="id" parameterType="com.domain.base.PdmsDriverSelfCollectSkuConfig" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into pdms_driver_self_collect_sku_config
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="warehouseId != null">
+        warehouse_id,
+      </if>
+      <if test="pickAreaId != null">
+        pick_area_id,
+      </if>
+      <if test="skuId != null">
+        sku_id,
+      </if>
+      <if test="ssuId != null">
+        ssu_id,
+      </if>
+      <if test="ssuName != null">
+        ssu_name,
+      </if>
+      <if test="receiveAmount != null">
+        receive_amount,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="configStatus != null">
+        config_status,
+      </if>
+      <if test="isDeleted != null">
+        is_deleted,
+      </if>
+      <if test="ct != null">
+        c_t,
+      </if>
+      <if test="ut != null">
+        u_t,
+      </if>
+      <if test="creater != null">
+        creater,
+      </if>
+      <if test="updater != null">
+        updater,
+      </if>
+      <if test="updaterName != null">
+        updater_name,
+      </if>
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="warehouseId != null">
+        #{warehouseId,jdbcType=BIGINT},
+      </if>
+      <if test="pickAreaId != null">
+        #{pickAreaId,jdbcType=BIGINT},
+      </if>
+      <if test="skuId != null">
+        #{skuId,jdbcType=BIGINT},
+      </if>
+      <if test="ssuId != null">
+        #{ssuId,jdbcType=BIGINT},
+      </if>
+      <if test="ssuName != null">
+        #{ssuName,jdbcType=VARCHAR},
+      </if>
+      <if test="receiveAmount != null">
+        #{receiveAmount,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="configStatus != null">
+        #{configStatus,jdbcType=TINYINT},
+      </if>
+      <if test="isDeleted != null">
+        #{isDeleted,jdbcType=TINYINT},
+      </if>
+      <if test="ct != null">
+        #{ct,jdbcType=BIGINT},
+      </if>
+      <if test="ut != null">
+        #{ut,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null">
+        #{creater,jdbcType=BIGINT},
+      </if>
+      <if test="updater != null">
+        #{updater,jdbcType=BIGINT},
+      </if>
+      <if test="updaterName != null">
+        #{updaterName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        id = #{id,jdbcType=BIGINT},
+      </if>
+      <if test="warehouseId != null">
+        warehouse_id = #{warehouseId,jdbcType=BIGINT},
+      </if>
+      <if test="pickAreaId != null">
+        pick_area_id = #{pickAreaId,jdbcType=BIGINT},
+      </if>
+      <if test="skuId != null">
+        sku_id = #{skuId,jdbcType=BIGINT},
+      </if>
+      <if test="ssuId != null">
+        ssu_id = #{ssuId,jdbcType=BIGINT},
+      </if>
+      <if test="ssuName != null">
+        ssu_name = #{ssuName,jdbcType=VARCHAR},
+      </if>
+      <if test="receiveAmount != null">
+        receive_amount = #{receiveAmount,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="configStatus != null">
+        config_status = #{configStatus,jdbcType=TINYINT},
+      </if>
+      <if test="isDeleted != null">
+        is_deleted = #{isDeleted,jdbcType=TINYINT},
+      </if>
+      <if test="ct != null">
+        c_t = #{ct,jdbcType=BIGINT},
+      </if>
+      <if test="ut != null">
+        u_t = #{ut,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null">
+        creater = #{creater,jdbcType=BIGINT},
+      </if>
+      <if test="updater != null">
+        updater = #{updater,jdbcType=BIGINT},
+      </if>
+      <if test="updaterName != null">
+        updater_name = #{updaterName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

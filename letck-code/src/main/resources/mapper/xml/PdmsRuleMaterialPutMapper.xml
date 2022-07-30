@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.base.PdmsRuleMaterialPutMapper">
+  <resultMap id="BaseResultMap" type="com.sprucetec.pdms.base.rules.sorting.entity.PdmsRuleMaterialPut">
+    <!--@mbg.generated-->
+    <!--@Table pdms_rule_material_put-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="area_put_rule_id" jdbcType="BIGINT" property="areaPutRuleId" />
+    <result column="warehouse_id" jdbcType="BIGINT" property="warehouseId" />
+    <result column="property_type" jdbcType="TINYINT" property="propertyType" />
+    <result column="property_val" jdbcType="INTEGER" property="propertyVal" />
+    <result column="material_sku_id" jdbcType="BIGINT" property="materialSkuId" />
+    <result column="material_sku_name" jdbcType="VARCHAR" property="materialSkuName" />
+    <result column="tips" jdbcType="VARCHAR" property="tips" />
+    <result column="is_recommend" jdbcType="TINYINT" property="isRecommend" />
+    <result column="is_deleted" jdbcType="TINYINT" property="isDeleted" />
+    <result column="c_t" jdbcType="BIGINT" property="ct" />
+    <result column="u_t" jdbcType="BIGINT" property="ut" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, area_put_rule_id, warehouse_id, property_type, property_val, material_sku_id, 
+    material_sku_name, tips, is_recommend, is_deleted, c_t, u_t
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from pdms_rule_material_put
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from pdms_rule_material_put
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.sprucetec.pdms.base.rules.sorting.entity.PdmsRuleMaterialPut" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into pdms_rule_material_put (area_put_rule_id, warehouse_id, property_type, 
+      property_val, material_sku_id, material_sku_name, 
+      tips, is_recommend, is_deleted, 
+      c_t, u_t)
+    values (#{areaPutRuleId,jdbcType=BIGINT}, #{warehouseId,jdbcType=BIGINT}, #{propertyType,jdbcType=TINYINT}, 
+      #{propertyVal,jdbcType=INTEGER}, #{materialSkuId,jdbcType=BIGINT}, #{materialSkuName,jdbcType=VARCHAR}, 
+      #{tips,jdbcType=VARCHAR}, #{isRecommend,jdbcType=TINYINT}, #{isDeleted,jdbcType=TINYINT}, 
+      #{ct,jdbcType=BIGINT}, #{ut,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.sprucetec.pdms.base.rules.sorting.entity.PdmsRuleMaterialPut" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into pdms_rule_material_put
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="areaPutRuleId != null">
+        area_put_rule_id,
+      </if>
+      <if test="warehouseId != null">
+        warehouse_id,
+      </if>
+      <if test="propertyType != null">
+        property_type,
+      </if>
+      <if test="propertyVal != null">
+        property_val,
+      </if>
+      <if test="materialSkuId != null">
+        material_sku_id,
+      </if>
+      <if test="materialSkuName != null">
+        material_sku_name,
+      </if>
+      <if test="tips != null">
+        tips,
+      </if>
+      <if test="isRecommend != null">
+        is_recommend,
+      </if>
+      <if test="isDeleted != null">
+        is_deleted,
+      </if>
+      <if test="ct != null">
+        c_t,
+      </if>
+      <if test="ut != null">
+        u_t,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="areaPutRuleId != null">
+        #{areaPutRuleId,jdbcType=BIGINT},
+      </if>
+      <if test="warehouseId != null">
+        #{warehouseId,jdbcType=BIGINT},
+      </if>
+      <if test="propertyType != null">
+        #{propertyType,jdbcType=TINYINT},
+      </if>
+      <if test="propertyVal != null">
+        #{propertyVal,jdbcType=INTEGER},
+      </if>
+      <if test="materialSkuId != null">
+        #{materialSkuId,jdbcType=BIGINT},
+      </if>
+      <if test="materialSkuName != null">
+        #{materialSkuName,jdbcType=VARCHAR},
+      </if>
+      <if test="tips != null">
+        #{tips,jdbcType=VARCHAR},
+      </if>
+      <if test="isRecommend != null">
+        #{isRecommend,jdbcType=TINYINT},
+      </if>
+      <if test="isDeleted != null">
+        #{isDeleted,jdbcType=TINYINT},
+      </if>
+      <if test="ct != null">
+        #{ct,jdbcType=BIGINT},
+      </if>
+      <if test="ut != null">
+        #{ut,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.sprucetec.pdms.base.rules.sorting.entity.PdmsRuleMaterialPut">
+    <!--@mbg.generated-->
+    update pdms_rule_material_put
+    <set>
+      <if test="areaPutRuleId != null">
+        area_put_rule_id = #{areaPutRuleId,jdbcType=BIGINT},
+      </if>
+      <if test="warehouseId != null">
+        warehouse_id = #{warehouseId,jdbcType=BIGINT},
+      </if>
+      <if test="propertyType != null">
+        property_type = #{propertyType,jdbcType=TINYINT},
+      </if>
+      <if test="propertyVal != null">
+        property_val = #{propertyVal,jdbcType=INTEGER},
+      </if>
+      <if test="materialSkuId != null">
+        material_sku_id = #{materialSkuId,jdbcType=BIGINT},
+      </if>
+      <if test="materialSkuName != null">
+        material_sku_name = #{materialSkuName,jdbcType=VARCHAR},
+      </if>
+      <if test="tips != null">
+        tips = #{tips,jdbcType=VARCHAR},
+      </if>
+      <if test="isRecommend != null">
+        is_recommend = #{isRecommend,jdbcType=TINYINT},
+      </if>
+      <if test="isDeleted != null">
+        is_deleted = #{isDeleted,jdbcType=TINYINT},
+      </if>
+      <if test="ct != null">
+        c_t = #{ct,jdbcType=BIGINT},
+      </if>
+      <if test="ut != null">
+        u_t = #{ut,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.sprucetec.pdms.base.rules.sorting.entity.PdmsRuleMaterialPut">
+    <!--@mbg.generated-->
+    update pdms_rule_material_put
+    set area_put_rule_id = #{areaPutRuleId,jdbcType=BIGINT},
+      warehouse_id = #{warehouseId,jdbcType=BIGINT},
+      property_type = #{propertyType,jdbcType=TINYINT},
+      property_val = #{propertyVal,jdbcType=INTEGER},
+      material_sku_id = #{materialSkuId,jdbcType=BIGINT},
+      material_sku_name = #{materialSkuName,jdbcType=VARCHAR},
+      tips = #{tips,jdbcType=VARCHAR},
+      is_recommend = #{isRecommend,jdbcType=TINYINT},
+      is_deleted = #{isDeleted,jdbcType=TINYINT},
+      c_t = #{ct,jdbcType=BIGINT},
+      u_t = #{ut,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update pdms_rule_material_put
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="area_put_rule_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.areaPutRuleId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="warehouse_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.warehouseId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="property_type = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.propertyType,jdbcType=TINYINT}
+        </foreach>
+      </trim>
+      <trim prefix="property_val = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.propertyVal,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="material_sku_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.materialSkuId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="material_sku_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.materialSkuName,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="tips = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.tips,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="is_recommend = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.isRecommend,jdbcType=TINYINT}
+        </foreach>
+      </trim>
+      <trim prefix="is_deleted = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.isDeleted,jdbcType=TINYINT}
+        </foreach>
+      </trim>
+      <trim prefix="c_t = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.ct,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="u_t = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.ut,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=BIGINT}
+    </foreach>
+  </update>
+  <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into pdms_rule_material_put
+    (area_put_rule_id, warehouse_id, property_type, property_val, material_sku_id, material_sku_name, 
+      tips, is_recommend, is_deleted, c_t, u_t)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.areaPutRuleId,jdbcType=BIGINT}, #{item.warehouseId,jdbcType=BIGINT}, #{item.propertyType,jdbcType=TINYINT}, 
+        #{item.propertyVal,jdbcType=INTEGER}, #{item.materialSkuId,jdbcType=BIGINT}, #{item.materialSkuName,jdbcType=VARCHAR}, 
+        #{item.tips,jdbcType=VARCHAR}, #{item.isRecommend,jdbcType=TINYINT}, #{item.isDeleted,jdbcType=TINYINT}, 
+        #{item.ct,jdbcType=BIGINT}, #{item.ut,jdbcType=BIGINT})
+    </foreach>
+  </insert>
+  <insert id="insertOrUpdate" keyColumn="id" keyProperty="id" parameterType="com.sprucetec.pdms.base.rules.sorting.entity.PdmsRuleMaterialPut" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into pdms_rule_material_put
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      area_put_rule_id,
+      warehouse_id,
+      property_type,
+      property_val,
+      material_sku_id,
+      material_sku_name,
+      tips,
+      is_recommend,
+      is_deleted,
+      c_t,
+      u_t,
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      #{areaPutRuleId,jdbcType=BIGINT},
+      #{warehouseId,jdbcType=BIGINT},
+      #{propertyType,jdbcType=TINYINT},
+      #{propertyVal,jdbcType=INTEGER},
+      #{materialSkuId,jdbcType=BIGINT},
+      #{materialSkuName,jdbcType=VARCHAR},
+      #{tips,jdbcType=VARCHAR},
+      #{isRecommend,jdbcType=TINYINT},
+      #{isDeleted,jdbcType=TINYINT},
+      #{ct,jdbcType=BIGINT},
+      #{ut,jdbcType=BIGINT},
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        id = #{id,jdbcType=BIGINT},
+      </if>
+      area_put_rule_id = #{areaPutRuleId,jdbcType=BIGINT},
+      warehouse_id = #{warehouseId,jdbcType=BIGINT},
+      property_type = #{propertyType,jdbcType=TINYINT},
+      property_val = #{propertyVal,jdbcType=INTEGER},
+      material_sku_id = #{materialSkuId,jdbcType=BIGINT},
+      material_sku_name = #{materialSkuName,jdbcType=VARCHAR},
+      tips = #{tips,jdbcType=VARCHAR},
+      is_recommend = #{isRecommend,jdbcType=TINYINT},
+      is_deleted = #{isDeleted,jdbcType=TINYINT},
+      c_t = #{ct,jdbcType=BIGINT},
+      u_t = #{ut,jdbcType=BIGINT},
+    </trim>
+  </insert>
+  <insert id="insertOrUpdateSelective" keyColumn="id" keyProperty="id" parameterType="com.sprucetec.pdms.base.rules.sorting.entity.PdmsRuleMaterialPut" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into pdms_rule_material_put
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="areaPutRuleId != null">
+        area_put_rule_id,
+      </if>
+      <if test="warehouseId != null">
+        warehouse_id,
+      </if>
+      <if test="propertyType != null">
+        property_type,
+      </if>
+      <if test="propertyVal != null">
+        property_val,
+      </if>
+      <if test="materialSkuId != null">
+        material_sku_id,
+      </if>
+      <if test="materialSkuName != null">
+        material_sku_name,
+      </if>
+      <if test="tips != null">
+        tips,
+      </if>
+      <if test="isRecommend != null">
+        is_recommend,
+      </if>
+      <if test="isDeleted != null">
+        is_deleted,
+      </if>
+      <if test="ct != null">
+        c_t,
+      </if>
+      <if test="ut != null">
+        u_t,
+      </if>
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="areaPutRuleId != null">
+        #{areaPutRuleId,jdbcType=BIGINT},
+      </if>
+      <if test="warehouseId != null">
+        #{warehouseId,jdbcType=BIGINT},
+      </if>
+      <if test="propertyType != null">
+        #{propertyType,jdbcType=TINYINT},
+      </if>
+      <if test="propertyVal != null">
+        #{propertyVal,jdbcType=INTEGER},
+      </if>
+      <if test="materialSkuId != null">
+        #{materialSkuId,jdbcType=BIGINT},
+      </if>
+      <if test="materialSkuName != null">
+        #{materialSkuName,jdbcType=VARCHAR},
+      </if>
+      <if test="tips != null">
+        #{tips,jdbcType=VARCHAR},
+      </if>
+      <if test="isRecommend != null">
+        #{isRecommend,jdbcType=TINYINT},
+      </if>
+      <if test="isDeleted != null">
+        #{isDeleted,jdbcType=TINYINT},
+      </if>
+      <if test="ct != null">
+        #{ct,jdbcType=BIGINT},
+      </if>
+      <if test="ut != null">
+        #{ut,jdbcType=BIGINT},
+      </if>
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        id = #{id,jdbcType=BIGINT},
+      </if>
+      <if test="areaPutRuleId != null">
+        area_put_rule_id = #{areaPutRuleId,jdbcType=BIGINT},
+      </if>
+      <if test="warehouseId != null">
+        warehouse_id = #{warehouseId,jdbcType=BIGINT},
+      </if>
+      <if test="propertyType != null">
+        property_type = #{propertyType,jdbcType=TINYINT},
+      </if>
+      <if test="propertyVal != null">
+        property_val = #{propertyVal,jdbcType=INTEGER},
+      </if>
+      <if test="materialSkuId != null">
+        material_sku_id = #{materialSkuId,jdbcType=BIGINT},
+      </if>
+      <if test="materialSkuName != null">
+        material_sku_name = #{materialSkuName,jdbcType=VARCHAR},
+      </if>
+      <if test="tips != null">
+        tips = #{tips,jdbcType=VARCHAR},
+      </if>
+      <if test="isRecommend != null">
+        is_recommend = #{isRecommend,jdbcType=TINYINT},
+      </if>
+      <if test="isDeleted != null">
+        is_deleted = #{isDeleted,jdbcType=TINYINT},
+      </if>
+      <if test="ct != null">
+        c_t = #{ct,jdbcType=BIGINT},
+      </if>
+      <if test="ut != null">
+        u_t = #{ut,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+</mapper>

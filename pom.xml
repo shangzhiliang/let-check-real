@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.letck.ck</groupId>
+    <artifactId>let-check-real</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>let-check-real</name>
+    <description>代码功能校验</description>
+
+    <properties>
+        <build.file.encoding>UTF-8</build.file.encoding>
+        <spring.version>4.1.6.RELEASE</spring.version>
+        <mybatis-spring.version>1.2.2</mybatis-spring.version>
+        <mybatis.version>3.2.8</mybatis.version>
+        <mysql.driver.version>5.1.37</mysql.driver.version>
+        <guava.version>11.0.1</guava.version>
+        <fastjson.version>1.2.70</fastjson.version>
+        <slf4j.version>1.7.6</slf4j.version>
+        <guva.version>19.0</guva.version>
+
+        <spring.boot.version>2.2.4.RELEASE</spring.boot.version>
+        <redisson.version>3.12.1</redisson.version>
+        <mysql.connector.version>5.1.48</mysql.connector.version>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.10</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils-core</artifactId>
+            <version>1.8.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.9.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-jdbc</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.redisson</groupId>
+            <artifactId>redisson-spring-boot-starter</artifactId>
+            <version>3.12.0</version>
+        </dependency>
+
+    </dependencies>
+
+    <modules>
+        <module>letck-real-api</module>
+        <module>letck-real-support</module>
+        <module>letck-real-main</module>
+        <module>letck-code</module>
+        <module>letck-real-core-support</module>
+        <module>letck-real-design-pattern-support</module>
+        <module>let-check-real-web</module>
+        <module>letck-real-ddd-support</module>
+    </modules>
+
+    <build>
+       <plugins>
+           <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-archetype-plugin</artifactId>
+               <version>3.1.2</version>
+           </plugin>
+
+           <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-compiler-plugin</artifactId>
+               <version>2.3.2</version>
+               <configuration>
+                   <source>1.8</source>
+                   <target>1.8</target>
+                   <encoding>${build.file.encoding}</encoding>
+               </configuration>
+           </plugin>
+
+       </plugins>
+    </build>
+
+
+    <!--<distributionManagement>-->
+        <!--&lt;!&ndash; 正式发布地址 &ndash;&gt;-->
+        <!--<repository>-->
+            <!--<id>thirdparty</id>-->
+            <!--<name>project thirdparty repository</name>-->
+            <!--<url>-->
+                <!--https://mvn.sprucetec.com/nexus/content/repositories/thirdparty-->
+            <!--</url>-->
+        <!--</repository>-->
+        <!--<snapshotRepository>-->
+            <!--<id>snapshots</id>-->
+            <!--<url>http://mvn.sprucetec.com/nexus/content/repositories/snapshots</url>-->
+        <!--</snapshotRepository>-->
+    <!--</distributionManagement>-->
+
+    <!-- add by xiaofeng ; solve the problem of adding-repo in idea -->
+
+    <repositories>
+        <repository>
+            <id>aliyun</id>
+            <name>aliyun</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+</project>

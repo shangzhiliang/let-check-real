@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pdms.base.mapper.PdmsProdbatchLocationRuleCfgMapper">
+  <resultMap id="BaseResultMap" type="com.pdms.base.model.PdmsProdbatchLocationRuleCfg">
+    <!--@mbg.generated-->
+    <!--@Table pdms_prodbatch_location_rule_cfg-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="warehouse_id" jdbcType="BIGINT" property="warehouseId" />
+    <result column="prod_batch_id" jdbcType="BIGINT" property="prodBatchId" />
+    <result column="sorting_collect_type" jdbcType="INTEGER" property="sortingCollectType" />
+    <result column="sorting_type" jdbcType="INTEGER" property="sortingType" />
+    <result column="sorting_center_area_id" jdbcType="BIGINT" property="sortingCenterAreaId" />
+    <result column="sorting_center_area_show_code" jdbcType="VARCHAR" property="sortingCenterAreaShowCode" />
+    <result column="is_package" jdbcType="TINYINT" property="isPackage" />
+    <result column="min_num" jdbcType="INTEGER" property="minNum" />
+    <result column="max_num" jdbcType="INTEGER" property="maxNum" />
+    <result column="is_deleted" jdbcType="TINYINT" property="isDeleted" />
+    <result column="c_t" jdbcType="BIGINT" property="ct" />
+    <result column="u_t" jdbcType="BIGINT" property="ut" />
+    <result column="creater" jdbcType="BIGINT" property="creater" />
+    <result column="updater" jdbcType="BIGINT" property="updater" />
+    <result column="updater_name" jdbcType="VARCHAR" property="updaterName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, warehouse_id, prod_batch_id, sorting_collect_type, sorting_type, sorting_center_area_id, 
+    sorting_center_area_show_code, is_package, min_num, max_num, is_deleted, c_t, u_t, 
+    creater, updater, updater_name
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from pdms_prodbatch_location_rule_cfg
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from pdms_prodbatch_location_rule_cfg
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.pdms.base.model.PdmsProdbatchLocationRuleCfg" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into pdms_prodbatch_location_rule_cfg (warehouse_id, prod_batch_id, sorting_collect_type, 
+      sorting_type, sorting_center_area_id, sorting_center_area_show_code, 
+      is_package, min_num, max_num, 
+      is_deleted, c_t, u_t, creater, 
+      updater, updater_name)
+    values (#{warehouseId,jdbcType=BIGINT}, #{prodBatchId,jdbcType=BIGINT}, #{sortingCollectType,jdbcType=INTEGER}, 
+      #{sortingType,jdbcType=INTEGER}, #{sortingCenterAreaId,jdbcType=BIGINT}, #{sortingCenterAreaShowCode,jdbcType=VARCHAR}, 
+      #{isPackage,jdbcType=TINYINT}, #{minNum,jdbcType=INTEGER}, #{maxNum,jdbcType=INTEGER}, 
+      #{isDeleted,jdbcType=TINYINT}, #{ct,jdbcType=BIGINT}, #{ut,jdbcType=BIGINT}, #{creater,jdbcType=BIGINT}, 
+      #{updater,jdbcType=BIGINT}, #{updaterName,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.pdms.base.model.PdmsProdbatchLocationRuleCfg" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into pdms_prodbatch_location_rule_cfg
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="warehouseId != null">
+        warehouse_id,
+      </if>
+      <if test="prodBatchId != null">
+        prod_batch_id,
+      </if>
+      <if test="sortingCollectType != null">
+        sorting_collect_type,
+      </if>
+      <if test="sortingType != null">
+        sorting_type,
+      </if>
+      <if test="sortingCenterAreaId != null">
+        sorting_center_area_id,
+      </if>
+      <if test="sortingCenterAreaShowCode != null">
+        sorting_center_area_show_code,
+      </if>
+      <if test="isPackage != null">
+        is_package,
+      </if>
+      <if test="minNum != null">
+        min_num,
+      </if>
+      <if test="maxNum != null">
+        max_num,
+      </if>
+      <if test="isDeleted != null">
+        is_deleted,
+      </if>
+      <if test="ct != null">
+        c_t,
+      </if>
+      <if test="ut != null">
+        u_t,
+      </if>
+      <if test="creater != null">
+        creater,
+      </if>
+      <if test="updater != null">
+        updater,
+      </if>
+      <if test="updaterName != null">
+        updater_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="warehouseId != null">
+        #{warehouseId,jdbcType=BIGINT},
+      </if>
+      <if test="prodBatchId != null">
+        #{prodBatchId,jdbcType=BIGINT},
+      </if>
+      <if test="sortingCollectType != null">
+        #{sortingCollectType,jdbcType=INTEGER},
+      </if>
+      <if test="sortingType != null">
+        #{sortingType,jdbcType=INTEGER},
+      </if>
+      <if test="sortingCenterAreaId != null">
+        #{sortingCenterAreaId,jdbcType=BIGINT},
+      </if>
+      <if test="sortingCenterAreaShowCode != null">
+        #{sortingCenterAreaShowCode,jdbcType=VARCHAR},
+      </if>
+      <if test="isPackage != null">
+        #{isPackage,jdbcType=TINYINT},
+      </if>
+      <if test="minNum != null">
+        #{minNum,jdbcType=INTEGER},
+      </if>
+      <if test="maxNum != null">
+        #{maxNum,jdbcType=INTEGER},
+      </if>
+      <if test="isDeleted != null">
+        #{isDeleted,jdbcType=TINYINT},
+      </if>
+      <if test="ct != null">
+        #{ct,jdbcType=BIGINT},
+      </if>
+      <if test="ut != null">
+        #{ut,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null">
+        #{creater,jdbcType=BIGINT},
+      </if>
+      <if test="updater != null">
+        #{updater,jdbcType=BIGINT},
+      </if>
+      <if test="updaterName != null">
+        #{updaterName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.pdms.base.model.PdmsProdbatchLocationRuleCfg">
+    <!--@mbg.generated-->
+    update pdms_prodbatch_location_rule_cfg
+    <set>
+      <if test="warehouseId != null">
+        warehouse_id = #{warehouseId,jdbcType=BIGINT},
+      </if>
+      <if test="prodBatchId != null">
+        prod_batch_id = #{prodBatchId,jdbcType=BIGINT},
+      </if>
+      <if test="sortingCollectType != null">
+        sorting_collect_type = #{sortingCollectType,jdbcType=INTEGER},
+      </if>
+      <if test="sortingType != null">
+        sorting_type = #{sortingType,jdbcType=INTEGER},
+      </if>
+      <if test="sortingCenterAreaId != null">
+        sorting_center_area_id = #{sortingCenterAreaId,jdbcType=BIGINT},
+      </if>
+      <if test="sortingCenterAreaShowCode != null">
+        sorting_center_area_show_code = #{sortingCenterAreaShowCode,jdbcType=VARCHAR},
+      </if>
+      <if test="isPackage != null">
+        is_package = #{isPackage,jdbcType=TINYINT},
+      </if>
+      <if test="minNum != null">
+        min_num = #{minNum,jdbcType=INTEGER},
+      </if>
+      <if test="maxNum != null">
+        max_num = #{maxNum,jdbcType=INTEGER},
+      </if>
+      <if test="isDeleted != null">
+        is_deleted = #{isDeleted,jdbcType=TINYINT},
+      </if>
+      <if test="ct != null">
+        c_t = #{ct,jdbcType=BIGINT},
+      </if>
+      <if test="ut != null">
+        u_t = #{ut,jdbcType=BIGINT},
+      </if>
+      <if test="creater != null">
+        creater = #{creater,jdbcType=BIGINT},
+      </if>
+      <if test="updater != null">
+        updater = #{updater,jdbcType=BIGINT},
+      </if>
+      <if test="updaterName != null">
+        updater_name = #{updaterName,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.pdms.base.model.PdmsProdbatchLocationRuleCfg">
+    <!--@mbg.generated-->
+    update pdms_prodbatch_location_rule_cfg
+    set warehouse_id = #{warehouseId,jdbcType=BIGINT},
+      prod_batch_id = #{prodBatchId,jdbcType=BIGINT},
+      sorting_collect_type = #{sortingCollectType,jdbcType=INTEGER},
+      sorting_type = #{sortingType,jdbcType=INTEGER},
+      sorting_center_area_id = #{sortingCenterAreaId,jdbcType=BIGINT},
+      sorting_center_area_show_code = #{sortingCenterAreaShowCode,jdbcType=VARCHAR},
+      is_package = #{isPackage,jdbcType=TINYINT},
+      min_num = #{minNum,jdbcType=INTEGER},
+      max_num = #{maxNum,jdbcType=INTEGER},
+      is_deleted = #{isDeleted,jdbcType=TINYINT},
+      c_t = #{ct,jdbcType=BIGINT},
+      u_t = #{ut,jdbcType=BIGINT},
+      creater = #{creater,jdbcType=BIGINT},
+      updater = #{updater,jdbcType=BIGINT},
+      updater_name = #{updaterName,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -1,0 +1,9 @@
+server:
+  port: 8080
+spring:
+  application:
+    # Spring Boot Admin展示的客户端项目名，不设置，会使用自动生成的随机id
+    name: spring-boot-demo-let-check-real-web
+  redis:
+    redisson:
+      file: classpath:redisson.yml

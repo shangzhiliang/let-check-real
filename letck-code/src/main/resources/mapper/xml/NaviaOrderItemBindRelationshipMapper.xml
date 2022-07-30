@@ -1,0 +1,899 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.schedule.NaviaOrderItemBindRelationshipMapper">
+  <resultMap id="BaseResultMap" type="com.domain.schedule.NaviaOrderItemBindRelationship">
+    <!--@mbg.generated-->
+    <!--@Table t_navia_order_item_bind_relationship-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="aps_order_id" jdbcType="BIGINT" property="apsOrderId" />
+    <result column="aps_order_item_id" jdbcType="BIGINT" property="apsOrderItemId" />
+    <result column="trace_id" jdbcType="VARCHAR" property="traceId" />
+    <result column="warehouse_id" jdbcType="BIGINT" property="warehouseId" />
+    <result column="last_sorting_center_id" jdbcType="BIGINT" property="lastSortingCenterId" />
+    <result column="city_id" jdbcType="BIGINT" property="cityId" />
+    <result column="delivery_date" jdbcType="INTEGER" property="deliveryDate" />
+    <result column="prod_batch_id" jdbcType="BIGINT" property="prodBatchId" />
+    <result column="sku_id" jdbcType="BIGINT" property="skuId" />
+    <result column="ssu_id" jdbcType="BIGINT" property="ssuId" />
+    <result column="owner_id" jdbcType="BIGINT" property="ownerId" />
+    <result column="supplier_id" jdbcType="BIGINT" property="supplierId" />
+    <result column="process_flag" jdbcType="TINYINT" property="processFlag" />
+    <result column="sorting_area_id" jdbcType="BIGINT" property="sortingAreaId" />
+    <result column="picking_area_id" jdbcType="BIGINT" property="pickingAreaId" />
+    <result column="rebin_area_id" jdbcType="BIGINT" property="rebinAreaId" />
+    <result column="sorting_tool_id" jdbcType="BIGINT" property="sortingToolId" />
+    <result column="is_package" jdbcType="TINYINT" property="isPackage" />
+    <result column="accumulate_type" jdbcType="TINYINT" property="accumulateType" />
+    <result column="accumulate_dest_id" jdbcType="BIGINT" property="accumulateDestId" />
+    <result column="composite_keys" jdbcType="VARCHAR" property="compositeKeys" />
+    <result column="c_u" jdbcType="BIGINT" property="cu" />
+    <result column="c_t" jdbcType="BIGINT" property="ct" />
+    <result column="u_u" jdbcType="BIGINT" property="uu" />
+    <result column="u_t" jdbcType="BIGINT" property="ut" />
+    <result column="updater_name" jdbcType="VARCHAR" property="updaterName" />
+    <result column="is_deleted" jdbcType="TINYINT" property="isDeleted" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, aps_order_id, aps_order_item_id, trace_id, warehouse_id, last_sorting_center_id, 
+    city_id, delivery_date, prod_batch_id, sku_id, ssu_id, owner_id, supplier_id, process_flag, 
+    sorting_area_id, picking_area_id, rebin_area_id, sorting_tool_id, is_package, accumulate_type, 
+    accumulate_dest_id, composite_keys, c_u, c_t, u_u, u_t, updater_name, is_deleted
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from t_navia_order_item_bind_relationship
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    <!--@mbg.generated-->
+    delete from t_navia_order_item_bind_relationship
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.domain.schedule.NaviaOrderItemBindRelationship" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into t_navia_order_item_bind_relationship (aps_order_id, aps_order_item_id, trace_id, 
+      warehouse_id, last_sorting_center_id, city_id, 
+      delivery_date, prod_batch_id, sku_id, 
+      ssu_id, owner_id, supplier_id, 
+      process_flag, sorting_area_id, picking_area_id, 
+      rebin_area_id, sorting_tool_id, is_package, 
+      accumulate_type, accumulate_dest_id, composite_keys, 
+      c_u, c_t, u_u, u_t, 
+      updater_name, is_deleted)
+    values (#{apsOrderId,jdbcType=BIGINT}, #{apsOrderItemId,jdbcType=BIGINT}, #{traceId,jdbcType=VARCHAR}, 
+      #{warehouseId,jdbcType=BIGINT}, #{lastSortingCenterId,jdbcType=BIGINT}, #{cityId,jdbcType=BIGINT}, 
+      #{deliveryDate,jdbcType=INTEGER}, #{prodBatchId,jdbcType=BIGINT}, #{skuId,jdbcType=BIGINT}, 
+      #{ssuId,jdbcType=BIGINT}, #{ownerId,jdbcType=BIGINT}, #{supplierId,jdbcType=BIGINT}, 
+      #{processFlag,jdbcType=TINYINT}, #{sortingAreaId,jdbcType=BIGINT}, #{pickingAreaId,jdbcType=BIGINT}, 
+      #{rebinAreaId,jdbcType=BIGINT}, #{sortingToolId,jdbcType=BIGINT}, #{isPackage,jdbcType=TINYINT}, 
+      #{accumulateType,jdbcType=TINYINT}, #{accumulateDestId,jdbcType=BIGINT}, #{compositeKeys,jdbcType=VARCHAR}, 
+      #{cu,jdbcType=BIGINT}, #{ct,jdbcType=BIGINT}, #{uu,jdbcType=BIGINT}, #{ut,jdbcType=BIGINT}, 
+      #{updaterName,jdbcType=VARCHAR}, #{isDeleted,jdbcType=TINYINT})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.domain.schedule.NaviaOrderItemBindRelationship" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into t_navia_order_item_bind_relationship
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="apsOrderId != null">
+        aps_order_id,
+      </if>
+      <if test="apsOrderItemId != null">
+        aps_order_item_id,
+      </if>
+      <if test="traceId != null">
+        trace_id,
+      </if>
+      <if test="warehouseId != null">
+        warehouse_id,
+      </if>
+      <if test="lastSortingCenterId != null">
+        last_sorting_center_id,
+      </if>
+      <if test="cityId != null">
+        city_id,
+      </if>
+      <if test="deliveryDate != null">
+        delivery_date,
+      </if>
+      <if test="prodBatchId != null">
+        prod_batch_id,
+      </if>
+      <if test="skuId != null">
+        sku_id,
+      </if>
+      <if test="ssuId != null">
+        ssu_id,
+      </if>
+      <if test="ownerId != null">
+        owner_id,
+      </if>
+      <if test="supplierId != null">
+        supplier_id,
+      </if>
+      <if test="processFlag != null">
+        process_flag,
+      </if>
+      <if test="sortingAreaId != null">
+        sorting_area_id,
+      </if>
+      <if test="pickingAreaId != null">
+        picking_area_id,
+      </if>
+      <if test="rebinAreaId != null">
+        rebin_area_id,
+      </if>
+      <if test="sortingToolId != null">
+        sorting_tool_id,
+      </if>
+      <if test="isPackage != null">
+        is_package,
+      </if>
+      <if test="accumulateType != null">
+        accumulate_type,
+      </if>
+      <if test="accumulateDestId != null">
+        accumulate_dest_id,
+      </if>
+      <if test="compositeKeys != null">
+        composite_keys,
+      </if>
+      <if test="cu != null">
+        c_u,
+      </if>
+      <if test="ct != null">
+        c_t,
+      </if>
+      <if test="uu != null">
+        u_u,
+      </if>
+      <if test="ut != null">
+        u_t,
+      </if>
+      <if test="updaterName != null">
+        updater_name,
+      </if>
+      <if test="isDeleted != null">
+        is_deleted,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="apsOrderId != null">
+        #{apsOrderId,jdbcType=BIGINT},
+      </if>
+      <if test="apsOrderItemId != null">
+        #{apsOrderItemId,jdbcType=BIGINT},
+      </if>
+      <if test="traceId != null">
+        #{traceId,jdbcType=VARCHAR},
+      </if>
+      <if test="warehouseId != null">
+        #{warehouseId,jdbcType=BIGINT},
+      </if>
+      <if test="lastSortingCenterId != null">
+        #{lastSortingCenterId,jdbcType=BIGINT},
+      </if>
+      <if test="cityId != null">
+        #{cityId,jdbcType=BIGINT},
+      </if>
+      <if test="deliveryDate != null">
+        #{deliveryDate,jdbcType=INTEGER},
+      </if>
+      <if test="prodBatchId != null">
+        #{prodBatchId,jdbcType=BIGINT},
+      </if>
+      <if test="skuId != null">
+        #{skuId,jdbcType=BIGINT},
+      </if>
+      <if test="ssuId != null">
+        #{ssuId,jdbcType=BIGINT},
+      </if>
+      <if test="ownerId != null">
+        #{ownerId,jdbcType=BIGINT},
+      </if>
+      <if test="supplierId != null">
+        #{supplierId,jdbcType=BIGINT},
+      </if>
+      <if test="processFlag != null">
+        #{processFlag,jdbcType=TINYINT},
+      </if>
+      <if test="sortingAreaId != null">
+        #{sortingAreaId,jdbcType=BIGINT},
+      </if>
+      <if test="pickingAreaId != null">
+        #{pickingAreaId,jdbcType=BIGINT},
+      </if>
+      <if test="rebinAreaId != null">
+        #{rebinAreaId,jdbcType=BIGINT},
+      </if>
+      <if test="sortingToolId != null">
+        #{sortingToolId,jdbcType=BIGINT},
+      </if>
+      <if test="isPackage != null">
+        #{isPackage,jdbcType=TINYINT},
+      </if>
+      <if test="accumulateType != null">
+        #{accumulateType,jdbcType=TINYINT},
+      </if>
+      <if test="accumulateDestId != null">
+        #{accumulateDestId,jdbcType=BIGINT},
+      </if>
+      <if test="compositeKeys != null">
+        #{compositeKeys,jdbcType=VARCHAR},
+      </if>
+      <if test="cu != null">
+        #{cu,jdbcType=BIGINT},
+      </if>
+      <if test="ct != null">
+        #{ct,jdbcType=BIGINT},
+      </if>
+      <if test="uu != null">
+        #{uu,jdbcType=BIGINT},
+      </if>
+      <if test="ut != null">
+        #{ut,jdbcType=BIGINT},
+      </if>
+      <if test="updaterName != null">
+        #{updaterName,jdbcType=VARCHAR},
+      </if>
+      <if test="isDeleted != null">
+        #{isDeleted,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.domain.schedule.NaviaOrderItemBindRelationship">
+    <!--@mbg.generated-->
+    update t_navia_order_item_bind_relationship
+    <set>
+      <if test="apsOrderId != null">
+        aps_order_id = #{apsOrderId,jdbcType=BIGINT},
+      </if>
+      <if test="apsOrderItemId != null">
+        aps_order_item_id = #{apsOrderItemId,jdbcType=BIGINT},
+      </if>
+      <if test="traceId != null">
+        trace_id = #{traceId,jdbcType=VARCHAR},
+      </if>
+      <if test="warehouseId != null">
+        warehouse_id = #{warehouseId,jdbcType=BIGINT},
+      </if>
+      <if test="lastSortingCenterId != null">
+        last_sorting_center_id = #{lastSortingCenterId,jdbcType=BIGINT},
+      </if>
+      <if test="cityId != null">
+        city_id = #{cityId,jdbcType=BIGINT},
+      </if>
+      <if test="deliveryDate != null">
+        delivery_date = #{deliveryDate,jdbcType=INTEGER},
+      </if>
+      <if test="prodBatchId != null">
+        prod_batch_id = #{prodBatchId,jdbcType=BIGINT},
+      </if>
+      <if test="skuId != null">
+        sku_id = #{skuId,jdbcType=BIGINT},
+      </if>
+      <if test="ssuId != null">
+        ssu_id = #{ssuId,jdbcType=BIGINT},
+      </if>
+      <if test="ownerId != null">
+        owner_id = #{ownerId,jdbcType=BIGINT},
+      </if>
+      <if test="supplierId != null">
+        supplier_id = #{supplierId,jdbcType=BIGINT},
+      </if>
+      <if test="processFlag != null">
+        process_flag = #{processFlag,jdbcType=TINYINT},
+      </if>
+      <if test="sortingAreaId != null">
+        sorting_area_id = #{sortingAreaId,jdbcType=BIGINT},
+      </if>
+      <if test="pickingAreaId != null">
+        picking_area_id = #{pickingAreaId,jdbcType=BIGINT},
+      </if>
+      <if test="rebinAreaId != null">
+        rebin_area_id = #{rebinAreaId,jdbcType=BIGINT},
+      </if>
+      <if test="sortingToolId != null">
+        sorting_tool_id = #{sortingToolId,jdbcType=BIGINT},
+      </if>
+      <if test="isPackage != null">
+        is_package = #{isPackage,jdbcType=TINYINT},
+      </if>
+      <if test="accumulateType != null">
+        accumulate_type = #{accumulateType,jdbcType=TINYINT},
+      </if>
+      <if test="accumulateDestId != null">
+        accumulate_dest_id = #{accumulateDestId,jdbcType=BIGINT},
+      </if>
+      <if test="compositeKeys != null">
+        composite_keys = #{compositeKeys,jdbcType=VARCHAR},
+      </if>
+      <if test="cu != null">
+        c_u = #{cu,jdbcType=BIGINT},
+      </if>
+      <if test="ct != null">
+        c_t = #{ct,jdbcType=BIGINT},
+      </if>
+      <if test="uu != null">
+        u_u = #{uu,jdbcType=BIGINT},
+      </if>
+      <if test="ut != null">
+        u_t = #{ut,jdbcType=BIGINT},
+      </if>
+      <if test="updaterName != null">
+        updater_name = #{updaterName,jdbcType=VARCHAR},
+      </if>
+      <if test="isDeleted != null">
+        is_deleted = #{isDeleted,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.domain.schedule.NaviaOrderItemBindRelationship">
+    <!--@mbg.generated-->
+    update t_navia_order_item_bind_relationship
+    set aps_order_id = #{apsOrderId,jdbcType=BIGINT},
+      aps_order_item_id = #{apsOrderItemId,jdbcType=BIGINT},
+      trace_id = #{traceId,jdbcType=VARCHAR},
+      warehouse_id = #{warehouseId,jdbcType=BIGINT},
+      last_sorting_center_id = #{lastSortingCenterId,jdbcType=BIGINT},
+      city_id = #{cityId,jdbcType=BIGINT},
+      delivery_date = #{deliveryDate,jdbcType=INTEGER},
+      prod_batch_id = #{prodBatchId,jdbcType=BIGINT},
+      sku_id = #{skuId,jdbcType=BIGINT},
+      ssu_id = #{ssuId,jdbcType=BIGINT},
+      owner_id = #{ownerId,jdbcType=BIGINT},
+      supplier_id = #{supplierId,jdbcType=BIGINT},
+      process_flag = #{processFlag,jdbcType=TINYINT},
+      sorting_area_id = #{sortingAreaId,jdbcType=BIGINT},
+      picking_area_id = #{pickingAreaId,jdbcType=BIGINT},
+      rebin_area_id = #{rebinAreaId,jdbcType=BIGINT},
+      sorting_tool_id = #{sortingToolId,jdbcType=BIGINT},
+      is_package = #{isPackage,jdbcType=TINYINT},
+      accumulate_type = #{accumulateType,jdbcType=TINYINT},
+      accumulate_dest_id = #{accumulateDestId,jdbcType=BIGINT},
+      composite_keys = #{compositeKeys,jdbcType=VARCHAR},
+      c_u = #{cu,jdbcType=BIGINT},
+      c_t = #{ct,jdbcType=BIGINT},
+      u_u = #{uu,jdbcType=BIGINT},
+      u_t = #{ut,jdbcType=BIGINT},
+      updater_name = #{updaterName,jdbcType=VARCHAR},
+      is_deleted = #{isDeleted,jdbcType=TINYINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update t_navia_order_item_bind_relationship
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="aps_order_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.apsOrderId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="aps_order_item_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.apsOrderItemId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="trace_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.traceId,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="warehouse_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.warehouseId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="last_sorting_center_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.lastSortingCenterId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="city_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.cityId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="delivery_date = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.deliveryDate,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="prod_batch_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.prodBatchId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="sku_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.skuId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="ssu_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.ssuId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="owner_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.ownerId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="supplier_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.supplierId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="process_flag = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.processFlag,jdbcType=TINYINT}
+        </foreach>
+      </trim>
+      <trim prefix="sorting_area_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.sortingAreaId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="picking_area_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.pickingAreaId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="rebin_area_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.rebinAreaId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="sorting_tool_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.sortingToolId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="is_package = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.isPackage,jdbcType=TINYINT}
+        </foreach>
+      </trim>
+      <trim prefix="accumulate_type = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.accumulateType,jdbcType=TINYINT}
+        </foreach>
+      </trim>
+      <trim prefix="accumulate_dest_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.accumulateDestId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="composite_keys = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.compositeKeys,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="c_u = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.cu,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="c_t = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.ct,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="u_u = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.uu,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="u_t = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.ut,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="updater_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.updaterName,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="is_deleted = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.isDeleted,jdbcType=TINYINT}
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=BIGINT}
+    </foreach>
+  </update>
+  <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into t_navia_order_item_bind_relationship
+    (aps_order_id, aps_order_item_id, trace_id, warehouse_id, last_sorting_center_id, 
+      city_id, delivery_date, prod_batch_id, sku_id, ssu_id, owner_id, supplier_id, process_flag, 
+      sorting_area_id, picking_area_id, rebin_area_id, sorting_tool_id, is_package, accumulate_type, 
+      accumulate_dest_id, composite_keys, c_u, c_t, u_u, u_t, updater_name, is_deleted
+      )
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.apsOrderId,jdbcType=BIGINT}, #{item.apsOrderItemId,jdbcType=BIGINT}, #{item.traceId,jdbcType=VARCHAR}, 
+        #{item.warehouseId,jdbcType=BIGINT}, #{item.lastSortingCenterId,jdbcType=BIGINT}, 
+        #{item.cityId,jdbcType=BIGINT}, #{item.deliveryDate,jdbcType=INTEGER}, #{item.prodBatchId,jdbcType=BIGINT}, 
+        #{item.skuId,jdbcType=BIGINT}, #{item.ssuId,jdbcType=BIGINT}, #{item.ownerId,jdbcType=BIGINT}, 
+        #{item.supplierId,jdbcType=BIGINT}, #{item.processFlag,jdbcType=TINYINT}, #{item.sortingAreaId,jdbcType=BIGINT}, 
+        #{item.pickingAreaId,jdbcType=BIGINT}, #{item.rebinAreaId,jdbcType=BIGINT}, #{item.sortingToolId,jdbcType=BIGINT}, 
+        #{item.isPackage,jdbcType=TINYINT}, #{item.accumulateType,jdbcType=TINYINT}, #{item.accumulateDestId,jdbcType=BIGINT}, 
+        #{item.compositeKeys,jdbcType=VARCHAR}, #{item.cu,jdbcType=BIGINT}, #{item.ct,jdbcType=BIGINT}, 
+        #{item.uu,jdbcType=BIGINT}, #{item.ut,jdbcType=BIGINT}, #{item.updaterName,jdbcType=VARCHAR}, 
+        #{item.isDeleted,jdbcType=TINYINT})
+    </foreach>
+  </insert>
+  <insert id="insertOrUpdate" keyColumn="id" keyProperty="id" parameterType="com.domain.schedule.NaviaOrderItemBindRelationship" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into t_navia_order_item_bind_relationship
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      aps_order_id,
+      aps_order_item_id,
+      trace_id,
+      warehouse_id,
+      last_sorting_center_id,
+      city_id,
+      delivery_date,
+      prod_batch_id,
+      sku_id,
+      ssu_id,
+      owner_id,
+      supplier_id,
+      process_flag,
+      sorting_area_id,
+      picking_area_id,
+      rebin_area_id,
+      sorting_tool_id,
+      is_package,
+      accumulate_type,
+      accumulate_dest_id,
+      composite_keys,
+      c_u,
+      c_t,
+      u_u,
+      u_t,
+      updater_name,
+      is_deleted,
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      #{apsOrderId,jdbcType=BIGINT},
+      #{apsOrderItemId,jdbcType=BIGINT},
+      #{traceId,jdbcType=VARCHAR},
+      #{warehouseId,jdbcType=BIGINT},
+      #{lastSortingCenterId,jdbcType=BIGINT},
+      #{cityId,jdbcType=BIGINT},
+      #{deliveryDate,jdbcType=INTEGER},
+      #{prodBatchId,jdbcType=BIGINT},
+      #{skuId,jdbcType=BIGINT},
+      #{ssuId,jdbcType=BIGINT},
+      #{ownerId,jdbcType=BIGINT},
+      #{supplierId,jdbcType=BIGINT},
+      #{processFlag,jdbcType=TINYINT},
+      #{sortingAreaId,jdbcType=BIGINT},
+      #{pickingAreaId,jdbcType=BIGINT},
+      #{rebinAreaId,jdbcType=BIGINT},
+      #{sortingToolId,jdbcType=BIGINT},
+      #{isPackage,jdbcType=TINYINT},
+      #{accumulateType,jdbcType=TINYINT},
+      #{accumulateDestId,jdbcType=BIGINT},
+      #{compositeKeys,jdbcType=VARCHAR},
+      #{cu,jdbcType=BIGINT},
+      #{ct,jdbcType=BIGINT},
+      #{uu,jdbcType=BIGINT},
+      #{ut,jdbcType=BIGINT},
+      #{updaterName,jdbcType=VARCHAR},
+      #{isDeleted,jdbcType=TINYINT},
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        id = #{id,jdbcType=BIGINT},
+      </if>
+      aps_order_id = #{apsOrderId,jdbcType=BIGINT},
+      aps_order_item_id = #{apsOrderItemId,jdbcType=BIGINT},
+      trace_id = #{traceId,jdbcType=VARCHAR},
+      warehouse_id = #{warehouseId,jdbcType=BIGINT},
+      last_sorting_center_id = #{lastSortingCenterId,jdbcType=BIGINT},
+      city_id = #{cityId,jdbcType=BIGINT},
+      delivery_date = #{deliveryDate,jdbcType=INTEGER},
+      prod_batch_id = #{prodBatchId,jdbcType=BIGINT},
+      sku_id = #{skuId,jdbcType=BIGINT},
+      ssu_id = #{ssuId,jdbcType=BIGINT},
+      owner_id = #{ownerId,jdbcType=BIGINT},
+      supplier_id = #{supplierId,jdbcType=BIGINT},
+      process_flag = #{processFlag,jdbcType=TINYINT},
+      sorting_area_id = #{sortingAreaId,jdbcType=BIGINT},
+      picking_area_id = #{pickingAreaId,jdbcType=BIGINT},
+      rebin_area_id = #{rebinAreaId,jdbcType=BIGINT},
+      sorting_tool_id = #{sortingToolId,jdbcType=BIGINT},
+      is_package = #{isPackage,jdbcType=TINYINT},
+      accumulate_type = #{accumulateType,jdbcType=TINYINT},
+      accumulate_dest_id = #{accumulateDestId,jdbcType=BIGINT},
+      composite_keys = #{compositeKeys,jdbcType=VARCHAR},
+      c_u = #{cu,jdbcType=BIGINT},
+      c_t = #{ct,jdbcType=BIGINT},
+      u_u = #{uu,jdbcType=BIGINT},
+      u_t = #{ut,jdbcType=BIGINT},
+      updater_name = #{updaterName,jdbcType=VARCHAR},
+      is_deleted = #{isDeleted,jdbcType=TINYINT},
+    </trim>
+  </insert>
+  <insert id="insertOrUpdateSelective" keyColumn="id" keyProperty="id" parameterType="com.domain.schedule.NaviaOrderItemBindRelationship" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into t_navia_order_item_bind_relationship
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="apsOrderId != null">
+        aps_order_id,
+      </if>
+      <if test="apsOrderItemId != null">
+        aps_order_item_id,
+      </if>
+      <if test="traceId != null">
+        trace_id,
+      </if>
+      <if test="warehouseId != null">
+        warehouse_id,
+      </if>
+      <if test="lastSortingCenterId != null">
+        last_sorting_center_id,
+      </if>
+      <if test="cityId != null">
+        city_id,
+      </if>
+      <if test="deliveryDate != null">
+        delivery_date,
+      </if>
+      <if test="prodBatchId != null">
+        prod_batch_id,
+      </if>
+      <if test="skuId != null">
+        sku_id,
+      </if>
+      <if test="ssuId != null">
+        ssu_id,
+      </if>
+      <if test="ownerId != null">
+        owner_id,
+      </if>
+      <if test="supplierId != null">
+        supplier_id,
+      </if>
+      <if test="processFlag != null">
+        process_flag,
+      </if>
+      <if test="sortingAreaId != null">
+        sorting_area_id,
+      </if>
+      <if test="pickingAreaId != null">
+        picking_area_id,
+      </if>
+      <if test="rebinAreaId != null">
+        rebin_area_id,
+      </if>
+      <if test="sortingToolId != null">
+        sorting_tool_id,
+      </if>
+      <if test="isPackage != null">
+        is_package,
+      </if>
+      <if test="accumulateType != null">
+        accumulate_type,
+      </if>
+      <if test="accumulateDestId != null">
+        accumulate_dest_id,
+      </if>
+      <if test="compositeKeys != null">
+        composite_keys,
+      </if>
+      <if test="cu != null">
+        c_u,
+      </if>
+      <if test="ct != null">
+        c_t,
+      </if>
+      <if test="uu != null">
+        u_u,
+      </if>
+      <if test="ut != null">
+        u_t,
+      </if>
+      <if test="updaterName != null">
+        updater_name,
+      </if>
+      <if test="isDeleted != null">
+        is_deleted,
+      </if>
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="apsOrderId != null">
+        #{apsOrderId,jdbcType=BIGINT},
+      </if>
+      <if test="apsOrderItemId != null">
+        #{apsOrderItemId,jdbcType=BIGINT},
+      </if>
+      <if test="traceId != null">
+        #{traceId,jdbcType=VARCHAR},
+      </if>
+      <if test="warehouseId != null">
+        #{warehouseId,jdbcType=BIGINT},
+      </if>
+      <if test="lastSortingCenterId != null">
+        #{lastSortingCenterId,jdbcType=BIGINT},
+      </if>
+      <if test="cityId != null">
+        #{cityId,jdbcType=BIGINT},
+      </if>
+      <if test="deliveryDate != null">
+        #{deliveryDate,jdbcType=INTEGER},
+      </if>
+      <if test="prodBatchId != null">
+        #{prodBatchId,jdbcType=BIGINT},
+      </if>
+      <if test="skuId != null">
+        #{skuId,jdbcType=BIGINT},
+      </if>
+      <if test="ssuId != null">
+        #{ssuId,jdbcType=BIGINT},
+      </if>
+      <if test="ownerId != null">
+        #{ownerId,jdbcType=BIGINT},
+      </if>
+      <if test="supplierId != null">
+        #{supplierId,jdbcType=BIGINT},
+      </if>
+      <if test="processFlag != null">
+        #{processFlag,jdbcType=TINYINT},
+      </if>
+      <if test="sortingAreaId != null">
+        #{sortingAreaId,jdbcType=BIGINT},
+      </if>
+      <if test="pickingAreaId != null">
+        #{pickingAreaId,jdbcType=BIGINT},
+      </if>
+      <if test="rebinAreaId != null">
+        #{rebinAreaId,jdbcType=BIGINT},
+      </if>
+      <if test="sortingToolId != null">
+        #{sortingToolId,jdbcType=BIGINT},
+      </if>
+      <if test="isPackage != null">
+        #{isPackage,jdbcType=TINYINT},
+      </if>
+      <if test="accumulateType != null">
+        #{accumulateType,jdbcType=TINYINT},
+      </if>
+      <if test="accumulateDestId != null">
+        #{accumulateDestId,jdbcType=BIGINT},
+      </if>
+      <if test="compositeKeys != null">
+        #{compositeKeys,jdbcType=VARCHAR},
+      </if>
+      <if test="cu != null">
+        #{cu,jdbcType=BIGINT},
+      </if>
+      <if test="ct != null">
+        #{ct,jdbcType=BIGINT},
+      </if>
+      <if test="uu != null">
+        #{uu,jdbcType=BIGINT},
+      </if>
+      <if test="ut != null">
+        #{ut,jdbcType=BIGINT},
+      </if>
+      <if test="updaterName != null">
+        #{updaterName,jdbcType=VARCHAR},
+      </if>
+      <if test="isDeleted != null">
+        #{isDeleted,jdbcType=TINYINT},
+      </if>
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        id = #{id,jdbcType=BIGINT},
+      </if>
+      <if test="apsOrderId != null">
+        aps_order_id = #{apsOrderId,jdbcType=BIGINT},
+      </if>
+      <if test="apsOrderItemId != null">
+        aps_order_item_id = #{apsOrderItemId,jdbcType=BIGINT},
+      </if>
+      <if test="traceId != null">
+        trace_id = #{traceId,jdbcType=VARCHAR},
+      </if>
+      <if test="warehouseId != null">
+        warehouse_id = #{warehouseId,jdbcType=BIGINT},
+      </if>
+      <if test="lastSortingCenterId != null">
+        last_sorting_center_id = #{lastSortingCenterId,jdbcType=BIGINT},
+      </if>
+      <if test="cityId != null">
+        city_id = #{cityId,jdbcType=BIGINT},
+      </if>
+      <if test="deliveryDate != null">
+        delivery_date = #{deliveryDate,jdbcType=INTEGER},
+      </if>
+      <if test="prodBatchId != null">
+        prod_batch_id = #{prodBatchId,jdbcType=BIGINT},
+      </if>
+      <if test="skuId != null">
+        sku_id = #{skuId,jdbcType=BIGINT},
+      </if>
+      <if test="ssuId != null">
+        ssu_id = #{ssuId,jdbcType=BIGINT},
+      </if>
+      <if test="ownerId != null">
+        owner_id = #{ownerId,jdbcType=BIGINT},
+      </if>
+      <if test="supplierId != null">
+        supplier_id = #{supplierId,jdbcType=BIGINT},
+      </if>
+      <if test="processFlag != null">
+        process_flag = #{processFlag,jdbcType=TINYINT},
+      </if>
+      <if test="sortingAreaId != null">
+        sorting_area_id = #{sortingAreaId,jdbcType=BIGINT},
+      </if>
+      <if test="pickingAreaId != null">
+        picking_area_id = #{pickingAreaId,jdbcType=BIGINT},
+      </if>
+      <if test="rebinAreaId != null">
+        rebin_area_id = #{rebinAreaId,jdbcType=BIGINT},
+      </if>
+      <if test="sortingToolId != null">
+        sorting_tool_id = #{sortingToolId,jdbcType=BIGINT},
+      </if>
+      <if test="isPackage != null">
+        is_package = #{isPackage,jdbcType=TINYINT},
+      </if>
+      <if test="accumulateType != null">
+        accumulate_type = #{accumulateType,jdbcType=TINYINT},
+      </if>
+      <if test="accumulateDestId != null">
+        accumulate_dest_id = #{accumulateDestId,jdbcType=BIGINT},
+      </if>
+      <if test="compositeKeys != null">
+        composite_keys = #{compositeKeys,jdbcType=VARCHAR},
+      </if>
+      <if test="cu != null">
+        c_u = #{cu,jdbcType=BIGINT},
+      </if>
+      <if test="ct != null">
+        c_t = #{ct,jdbcType=BIGINT},
+      </if>
+      <if test="uu != null">
+        u_u = #{uu,jdbcType=BIGINT},
+      </if>
+      <if test="ut != null">
+        u_t = #{ut,jdbcType=BIGINT},
+      </if>
+      <if test="updaterName != null">
+        updater_name = #{updaterName,jdbcType=VARCHAR},
+      </if>
+      <if test="isDeleted != null">
+        is_deleted = #{isDeleted,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+</mapper>
