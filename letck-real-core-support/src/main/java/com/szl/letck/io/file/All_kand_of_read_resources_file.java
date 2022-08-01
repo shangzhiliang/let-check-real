@@ -15,6 +15,11 @@ import java.net.URLEncoder;
  */
 public class All_kand_of_read_resources_file {
 
+    public static void main(String[] args) {
+        All_kand_of_read_resources_file obj = new All_kand_of_read_resources_file();
+        obj.function1();
+    }
+
     public static void getFileContent(Object fileInPath) throws IOException{
         BufferedReader bufferedReader = null;
 

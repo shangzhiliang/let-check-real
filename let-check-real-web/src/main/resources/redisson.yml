@@ -1,5 +1,5 @@
 singleServerConfig:
-  password: 123456
+  password:
   address: "redis://127.0.0.1:6379"
   database: 1
 threads: 0
