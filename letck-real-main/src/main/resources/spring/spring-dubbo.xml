@@ -4,8 +4,8 @@
        xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
             http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
-    <dubbo:application name="${dubbo.application.name}" owner="programmer" organization="dubbox"
-                       environment="${dubbo.environment}"/>
-    <dubbo:registry protocol="${dubbo.registry.protocol}" address="${dubbo.registry.address}"/>
-    <dubbo:protocol name="${dubbo.protocol.name}" port="${dubbo.protocol.port}"  payload="33554432"/>  
+<!--    <dubbo:application name="${dubbo.application.name}" owner="programmer" organization="dubbox"-->
+<!--                       environment="${dubbo.environment}"/>-->
+<!--    <dubbo:registry protocol="${dubbo.registry.protocol}" address="${dubbo.registry.address}"/>-->
+<!--    <dubbo:protocol name="${dubbo.protocol.name}" port="${dubbo.protocol.port}"  payload="33554432"/>  -->
 </beans>

@@ -1,6 +1,16 @@
 server:
-  port: 8080
+  port: 8081
+  ssl:
+    key-store: classpath:name.keystore
+    key-alias: name.keystore
+    key-store-password: 123456
+    key-store-type: JKS
+
 spring:
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
   application:
     # Spring Boot Admin展示的客户端项目名，不设置，会使用自动生成的随机id
     name: spring-boot-demo-let-check-real-web

@@ -1,4 +1,4 @@
-package cn.szl.letck.controller;
+package cn.szl.letck;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,8 +14,9 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
  * @date
  */
 @SpringBootApplication(exclude = {DataSourceAutoConfiguration.class, RabbitAutoConfiguration.class})
-public class SpringBootApplicationMain2 {
+public class SpringBootApplicationMain {
+
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootApplicationMain2.class, args);
+        SpringApplication.run(SpringBootApplicationMain.class, args);
     }
 }

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.concurrent.TimeUnit;
 
-@RestController
+@RestController("stock")
 @Slf4j
 public class IndexController extends SpringBootServletInitializer {
 
