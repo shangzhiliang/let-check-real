@@ -2,7 +2,7 @@ package com.mapper.schedule;
 
 import com.domain.schedule.PdmsDriverSelfCollectRecord;
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import org.springframework.data.repository.query.Param;
 
 public interface PdmsDriverSelfCollectRecordMapper {
     int deleteByPrimaryKey(Long id);
