@@ -24,7 +24,7 @@
         <spring.boot.version>2.2.4.RELEASE</spring.boot.version>
         <redisson.version>3.12.1</redisson.version>
         <mysql.connector.version>5.1.48</mysql.connector.version>
-
+        <hutool.version>5.8.12</hutool.version>
     </properties>
 
     <dependencyManagement>
@@ -88,6 +88,11 @@
             <version>3.12.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool.version}</version>
+        </dependency>
     </dependencies>
 
     <modules>

@@ -19,13 +19,6 @@ public class LongArrayGroupTest {
         System.out.println(result);
     }
 
-    private static void findClassLoader() {
-        ClassLoader classLoader = LongArrayGroupTest.class.getClassLoader();
-        while (classLoader != null){
-            System.out.println(classLoader.toString());
-            classLoader = classLoader.getParent();
-        }
-    }
 
     public static Map<String, List> grouping(long[] arr){
         Map<String, List> listMap = new LinkedHashMap<>();
@@ -78,4 +71,5 @@ public class LongArrayGroupTest {
 
         return startKey+"~"+endKey;
     }
+
 }

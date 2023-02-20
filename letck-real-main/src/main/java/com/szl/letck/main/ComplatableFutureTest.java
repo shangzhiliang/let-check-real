@@ -44,16 +44,19 @@ public class ComplatableFutureTest {
     public static void main(String[] args) {
         // 除了Float，Double 之外其它包装类型数字有缓存，没缓存的不能用== 判断对象值一致。有缓存的可以,
         // 整形 区间[-128 ~ 127] 之间的数据有缓存，此区间之外的无缓存都是创建的新对象，不能用== 判断，因此最好所有整形封装类型用equals 判断
-        Integer i1 = 1272;
-        Integer i2 = 1272;
-        System.out.println(i1.equals(i2));
+//        Integer i1 = 1272;
+//        Integer i2 = 1272;
+//        System.out.println(i1.equals(i2));
+//
+//        Float f1 = 22.3f;
+//        Float f2 = 22.3f;
+//        System.out.println(f1.floatValue() == f2.floatValue());
+//
+//        Double d1 = 22.3d;
+//        Double d2 = 22.3d;
+//        System.out.println(d1== d2);
 
-        Float f1 = 22.3f;
-        Float f2 = 22.3f;
-        System.out.println(f1.floatValue() == f2.floatValue());
-
-        Double d1 = 22.3d;
-        Double d2 = 22.3d;
-        System.out.println(d1== d2);
+        System.out.println(4&7);
+        int[] ia = new int [15];
     }
 }

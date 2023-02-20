@@ -42,8 +42,6 @@ public class Find_list_theK_max_num {
             k = n;
         }
 
-        PriorityQueue<Integer> priorityQueue = new PriorityQueue();
-
         Arrays.sort(arr,new Comparator<Integer>()
         {
             @Override

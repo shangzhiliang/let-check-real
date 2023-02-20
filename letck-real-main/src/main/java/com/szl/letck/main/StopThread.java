@@ -12,50 +12,33 @@ import java.util.concurrent.TimeUnit;
  */
 public class StopThread {
     private static volatile boolean  stopRequested;
-//    public static void main(String[] args) throws InterruptedException {
-//        Thread backgroundThread = new Thread(() -> {
-//            int i = 0;
-//            while (!stopRequested){
-//                i++;
-//                System.out.println("T1--i++ = " + i);
-//                try {
-//                    TimeUnit.SECONDS.sleep(1);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//
-//        });
-//
-//
-//        Thread t2 = new Thread(() -> {
-//            while (!stopRequested) {
-//                System.out.println("T2--i++ = " + stopRequested);
-//                try {
-//                    TimeUnit.SECONDS.sleep(1);
-//                } catch (InterruptedException e) {
-//
-//                }
-//            }
-//        });
-//
-//
-//        backgroundThread.start();
-//        t2.start();
-//        TimeUnit.SECONDS.sleep(1);
-//        stopRequested = true;
-//    }
 
-    public static void main(String[] args) {
-        ThreadLocalRandom random = ThreadLocalRandom.current();
-        int count = 0;
-        for (int i = 0; i < 5; i++) {
-            if (isInterested(random.nextInt(10))) {
-                count++;
-            }
-        }
-        System.out.printf("Found %d interested values%n", count);
+    public static void main(String[] args) throws InterruptedException {
+        Thread thread2;
+        Thread thread1;
+        thread1= new Thread(() -> {
+            System.out.println("1");
+        });
+        thread2= new Thread(() -> {
+            System.out.println("2");
+        });
+        thread2.join();
+        thread2.start();
+        thread1.start();
+        thread1.join();
+        System.out.println("3");
     }
+
+//    public static void main(String[] args) {
+//        ThreadLocalRandom random = ThreadLocalRandom.current();
+//        int count = 0;
+//        for (int i = 0; i < 5; i++) {
+//            if (isInterested(random.nextInt(10))) {
+//                count++;
+//            }
+//        }
+//        System.out.printf("Found %d interested values%n", count);
+//    }
 
     private static boolean isInterested(int i) {
         return i % 2 == 0;
